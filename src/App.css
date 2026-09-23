@@ -1,0 +1,260 @@
+:root {
+  color-scheme: light;
+  --bg: #f0f4f1;
+  --ink: #1c1917;
+  --muted: #78716c;
+  --card: #fffdf8;
+  --line: #dce5dd;
+  --accent: #166534;
+  --accent-soft: #dcfce7;
+  --danger: #b91c1c;
+  --ok: #15803d;
+  --ng: #b45309;
+  --panel: #14532d;
+  --panel-ink: #ecfdf5;
+  font-family: "Hiragino Sans", "Noto Sans JP", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #bbf7d055, transparent 40%),
+    radial-gradient(circle at top right, #86efac44, transparent 35%),
+    var(--bg);
+}
+
+#root { min-height: 100vh; }
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app-header {
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 0.2rem 0;
+  font-size: 1.8rem;
+}
+
+.lede, .muted, .concept-panel__hint {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+.flash {
+  background: var(--accent-soft);
+  border: 1px solid #86efac;
+  color: #14532d;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.main {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 24px #00000008;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input, select {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: #fff;
+}
+
+.btn {
+  font: inherit;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn--primary {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+.btn--danger {
+  background: #fee2e2;
+  color: var(--danger);
+  margin-top: 0.5rem;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--panel-ink);
+  border: 1px solid #166534;
+}
+
+.book-list, .loan-list, .concept-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.book-list li {
+  padding: 0.6rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 0.6rem;
+}
+
+.book-list__main {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.book-list__meta, .loan-item__meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.loan-item {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.loan-item__main {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge--active { background: #dcfce7; color: var(--ok); }
+.badge--returned { background: #f1f5f9; color: #64748b; }
+
+.concept-panel {
+  position: sticky;
+  top: 1rem;
+  background: var(--panel);
+  color: var(--panel-ink);
+  border-radius: 1rem;
+  padding: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}
+
+.concept-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.concept-panel h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.concept-item {
+  background: #052e16;
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border-left: 3px solid #4ade80;
+}
+
+.concept-item--ng { border-left-color: #f59e0b; }
+.concept-item--ok { border-left-color: #34d399; }
+
+.concept-item__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #86efac;
+}
+
+.concept-kind {
+  font-weight: 700;
+  color: #bbf7d0;
+}
+
+.concept-item__title {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.concept-item__detail {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #d1fae5;
+}
+
+.concept-empty {
+  color: #86efac;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .concept-panel { position: static; max-height: none; }
+}
