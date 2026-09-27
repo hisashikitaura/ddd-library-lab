@@ -10,7 +10,7 @@ export const SEED_BOOKS: Book[] = [
 ]
 
 export const SEED_MEMBERS: Member[] = [
-  Member.create('member_kitaura', '北浦'),
+  Member.create('member_yamada', '山田太郎'),
   Member.create('member_sato', '佐藤'),
   Member.create('member_suzuki', '鈴木'),
 ]
